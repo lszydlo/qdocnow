@@ -10,9 +10,10 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class PreparationFacadeTest {
 
-	private PreparationFacade preparationFacade = new PreparationFacade(role -> {
-		throw new RuntimeException("");
-	});
+	private PreparationFacade preparationFacade = new PreparationFacade(
+			role -> { throw new RuntimeException(""); },
+			() -> false,
+			new QDocNumberFactory(), null, null,null,null);
 
 	@Test
 	public void should_create_new_qdoc() {
